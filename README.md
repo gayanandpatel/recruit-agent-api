@@ -124,8 +124,38 @@ Launch the asynchronous FastAPI server:
 ```bash
 uvicorn app.main:app --reload
 ```
-The API will be available at http://127.0.0.1:8000.
 
+## 🧪 How to Test the API (Step-by-Step)
+Once your server is running, FastAPI automatically generates an interactive documentation interface (Swagger UI) that allows you to test the file uploads directly from your browser.
+
+1. **Open the Interactive UI:** Open your web browser and navigate to http://127.0.0.1:8000/docs.
+
+2. **Locate the Endpoint:** Find the green `POST` box labeled `/api/v1/evaluate` and click on it to expand the details.
+
+3. **Enable Testing:** Click the **"Try it out"** button in the top right corner of the expanded box.
+
+4. **Upload Documents:**  
+- Under the `resume` field, click **"Choose File"** and select a test candidate resume (e.g., `data/sample_resume_1.pdf`).
+
+- Under the `job_description` field, click **"Choose File"** and select the target job description (e.g., `data/job_description.txt`).
+
+5. **Run the Agents:** Click the large blue **"Execute"** button. This will trigger the backend workflow (Extractor -> Evaluator -> Critic).
+
+6. **View the Results:** Scroll down slightly to the **"Responses"** section. Under the "Server response" block, you will see a `200` status code and the final JSON evaluation.
+
+### Example Successful Output:
+```bash
+{
+  "candidate_data": {
+    "skills": ["Python", "FastAPI", "Docker"],
+    "experience_years": 3,
+    "education": "B.S. in Computer Science"
+  },
+  "final_score": 85,
+  "missing_skills": ["Azure ML", "LangGraph"],
+  "evaluation_summary": "The candidate is a strong technical fit for backend development with excellent experience in FastAPI. However, they lack the specific AI orchestration experience requested."
+}
+```
 ## 📚 API Documentation
 Once the server is running, access the interactive Swagger UI to test file uploads at:
 ```text
