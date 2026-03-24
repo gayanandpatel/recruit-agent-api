@@ -113,10 +113,10 @@ cp .env
 
 Populate .env with your Azure credentials:
 ```bash
-    AZURE_OPENAI_API_KEY=your_azure_api_key_here
-    AZURE_OPENAI_ENDPOINT=[https://your-resource-name.openai.azure.com/](https://your-resource-name.openai.azure.com/)
-    AZURE_OPENAI_API_VERSION=2024-08-01-preview
-    AZURE_OPENAI_DEPLOYMENT_NAME=your_model_deployment_name
+AZURE_OPENAI_API_KEY=your_azure_api_key_here
+AZURE_OPENAI_ENDPOINT=[https://your-resource-name.openai.azure.com/](https://your-resource-name.openai.azure.com/)
+AZURE_OPENAI_API_VERSION=2024-08-01-preview
+AZURE_OPENAI_DEPLOYMENT_NAME=your_model_deployment_name
 ```
 4. Running the Application
 
@@ -131,3 +131,14 @@ Once the server is running, access the interactive Swagger UI to test file uploa
 ```text
 http://127.0.0.1:8000/docs
 ```
+**Evaluate Candidate**
+```text
+POST /api/v1/evaluate
+```
+Accepts document uploads, parses the text, and analyzes the resume against the job description.
+
+**Request (multipart/form-data):**
+- `resume`: File Upload (Supported formats: `.pdf`, `.docx`, `.txt`)
+- `job_description`: File Upload (Supported formats: `.pdf`, `.docx`, `.txt`)
+
+### Successful Response (200 OK)
