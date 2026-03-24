@@ -1,12 +1,28 @@
-# 🤖 RecruitAgent API: Agentic Candidate Screening Pipeline
+v# 🤖 RecruitAgent API: Agentic Candidate Screening Pipeline
 
-[cite_start]RecruitAgent is an Agentic AI screening API built with FastAPI and LangGraph, designed to simulate an intelligent recruitment SaaS feature. [cite: 59] It automates the resume screening process by extracting data from raw documents (PDF, DOCX, TXT) and evaluating it against a job description using a self-correcting AI workflow.
+![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.109%2B-009688)
+![LangGraph](https://img.shields.io/badge/LangGraph-Multi--Agent-orange)
+![Azure](https://img.shields.io/badge/Azure-OpenAI-0078D4)
+
+RecruitAgent is an Agentic AI screening API built with FastAPI and LangGraph, designed to simulate an intelligent recruitment SaaS feature. It automates the resume screening process by extracting data from raw documents (PDF, DOCX, TXT) and evaluating it against a job description using a self-correcting AI workflow.
+
+---
+
+## 📸 System Screenshots
+
+*(Add your screenshots to a `docs/` folder in your repository and update the links below to showcase your working project.)*
+
+| Swagger UI & File Uploads | API Evaluation Response |
+| :---: | :---: |
+| <img src="docs/swagger_ui.png" width="400" alt="Swagger UI Interface showing PDF/DOCX file upload fields"> | <img src="docs/api_response.png" width="400" alt="JSON Response showing candidate score and missing skills"> |
+| *FastAPI Swagger UI handling multipart/form-data for Resumes and Job Descriptions.* | *The final deterministic JSON output from the Critic Agent.* |
 
 ---
 
 ## 📖 Overview
 
-[cite_start]Traditional single-prompt LLM chains suffer from hallucination, so this project implemented an "Evaluator-Critic" loop using LangGraph to ensure higher reliability in candidate scoring. [cite: 60] 
+Traditional single-prompt LLM chains suffer from hallucination, so this project implements an "Evaluator-Critic" loop using LangGraph to ensure higher reliability in candidate scoring. 
 
 Instead of relying on a single zero-shot evaluation, the system utilizes specialized AI agents to extract structured data, score the candidate objectively, and self-critique the results to eliminate bias before returning a deterministic JSON response to the client.
 
@@ -14,18 +30,18 @@ Instead of relying on a single zero-shot evaluation, the system utilizes special
 
 This project utilizes a stateful graph architecture to manage the LLM reasoning process:
 
-1. [cite_start]**Extraction Node:** Takes a raw text resume and uses an LLM purely to extract structured data (Skills, Experience Years, Education) into a Pydantic model. [cite: 14]
-2. [cite_start]**Evaluation Node:** Takes the extracted structured data and the Job Description. [cite: 15] It outputs a base score and identifies skill gaps.
-3. [cite_start]**Critic Node (Self-Reflection):** Reviews the Evaluator's score. [cite: 17] [cite_start]If the Critic finds the score is biased or missed something in the context, it loops back to the Evaluator for a revision. [cite: 18]
+1. **Extraction Node:** Takes a raw document resume and uses an LLM purely to extract structured data (Skills, Experience Years, Education) into a strict Pydantic model.
+2. **Evaluation Node:** Takes the extracted structured data and the Job Description document. It outputs a base score and identifies skill gaps.
+3. **Critic Node (Self-Reflection):** Reviews the Evaluator's score. If the Critic finds the score is biased or missed something in the context, it loops back to the Evaluator for a revision.
 4. **FastAPI Layer:** Handles asynchronous `multipart/form-data` file uploads, parses the documents into text, and serves the final structured JSON output.
 
 ## 💻 Tech Stack
 
-* [cite_start]**Language:** Python 3.11/3.12 [cite: 7]
-* [cite_start]**Web Framework:** FastAPI (essential for modern Python backends). [cite: 8]
-* [cite_start]**AI Orchestration:** LangGraph (Microsoft/industry standard for building stateful, multi-actor LLM applications). [cite: 9]
-* [cite_start]**Data Validation:** Pydantic V2 (Enforcing strict JSON schemas for the AI outputs). [cite: 10]
-* [cite_start]**LLM Provider:** Azure OpenAI. [cite: 11]
+* **Language:** Python 3.11/3.12
+* **Web Framework:** FastAPI (essential for modern Python backends).
+* **AI Orchestration:** LangGraph (Microsoft/industry standard for building stateful, multi-actor LLM applications).
+* **Data Validation:** Pydantic V2 (Enforcing strict JSON schemas for the AI outputs).
+* **LLM Provider:** Azure OpenAI.
 * **Document Parsing:** `pypdf`, `python-docx`
 
 ---
