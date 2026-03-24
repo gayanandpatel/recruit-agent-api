@@ -15,10 +15,10 @@ RecruitAgent is an Agentic AI screening API built with FastAPI and LangGraph, de
 | :---: | :---: | :---: |
 | ![Launch FastAPI Server](screenshots/launch_fastapiServer.png) | ![Swagger UI Homepage](screenshots/landing_page.png) | ![Enable Testing](screenshots/enable_testing.gif) |
 | *Launching the FastAPI server* | *The Landing Page of Swagger UI* | *Enabling Testing to upload sample data* |
-| Launch FastAPI Server | Swagger UI Homepage | Enable Testing |
+| Upload Sample Resume and JD | Execute Sample Data | Results |
 | :---: | :---: | :---: |
-| ![Launch FastAPI Server](screenshots/launch_fastapiServer.png) | ![Swagger UI Homepage](screenshots/landing_page.png) | ![Enable Testing](screenshots/enable_testing.gif) |
-| *Launching the FastAPI server* | *The Landing Page of Swagger UI* | *Enabling Testing to upload sample data* |
+| ![Upload Sample Resume and JD](screenshots/upload_sampledata.gif) | ![Execute Sample Data](screenshots/execute_file.gif) | ![Results](screenshots/result.gif) |
+| *Uploading Sample Resume and Job Description* | *Executing the sample data* | *Results after Execution* |
 
 ## 📋 Overview
 
