@@ -87,7 +87,7 @@ recruit-agent-api/
 ```
 </details>
 
-# 🚀 Quickstart Guide
+## 🚀 Quickstart Guide
 1. Prerequisites
 Ensure you have Python 3.11 or 3.12 installed on your machine.
 
