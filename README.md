@@ -131,14 +131,26 @@ Once the server is running, access the interactive Swagger UI to test file uploa
 ```text
 http://127.0.0.1:8000/docs
 ```
-**Evaluate Candidate**
+### Evaluate Candidate
 ```text
 POST /api/v1/evaluate
 ```
 Accepts document uploads, parses the text, and analyzes the resume against the job description.
 
-**Request (multipart/form-data):**
+### Request (multipart/form-data):
 - `resume`: File Upload (Supported formats: `.pdf`, `.docx`, `.txt`)
 - `job_description`: File Upload (Supported formats: `.pdf`, `.docx`, `.txt`)
 
 ### Successful Response (200 OK)
+```bash
+{
+  "candidate_data": {
+    "skills": ["Python", "FastAPI", "Docker"],
+    "experience_years": 3,
+    "education": "B.S. in Computer Science"
+  },
+  "final_score": 85,
+  "missing_skills": ["Azure ML", "LangGraph"],
+  "evaluation_summary": "The candidate is a strong technical fit for backend development with excellent experience in FastAPI. However, they lack the specific AI orchestration experience requested."
+}
+```
