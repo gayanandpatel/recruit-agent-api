@@ -1,15 +1,30 @@
-from langchain_openai import ChatOpenAI
+# from langchain_openai import ChatOpenAI
+from langchain_openai import AzureChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from app.core.config import settings
 from app.core.schemas import ExtractedCandidateData, EvaluatorOutput, CriticOutput
 from app.agents.state import AgentState
 
 # Wrapper class to show structural maturity, as requested by the roadmap
+
+
+# This was for openai key
+# class AzureLLMClient:
+#     def __init__(self):
+#         # Using standard OpenAI here for ease of execution, 
+#         # but encapsulated to demonstrate production-ready patterns.
+#         self.llm = ChatOpenAI(temperature=0, model=settings.model_name, api_key=settings.openai_api_key)
+
+# This is for Azure OpenAI key
 class AzureLLMClient:
     def __init__(self):
-        # Using standard OpenAI here for ease of execution, 
-        # but encapsulated to demonstrate production-ready patterns.
-        self.llm = ChatOpenAI(temperature=0, model=settings.model_name, api_key=settings.openai_api_key)
+        self.llm = AzureChatOpenAI(
+            temperature=0,
+            azure_deployment=settings.azure_openai_deployment_name,
+            api_version=settings.azure_openai_api_version,
+            azure_endpoint=settings.azure_openai_endpoint,
+            api_key=settings.azure_openai_api_key
+        )
 
 llm_client = AzureLLMClient().llm
 
