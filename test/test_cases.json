@@ -1,0 +1,42 @@
+[
+  {
+    "resume_text": "Alex Developer\n\nExperience: 3 years as a Backend Software Engineer at TechCorp. Built RESTful APIs using Python and FastAPI. Managed PostgreSQL databases and deployed containerized applications using Docker. \n\nEducation: B.S. in Computer Science. \n\nSkills: Python, FastAPI, SQL, Docker, Git.",
+    "job_description": "Proshore is looking for a Mid-Level AI Developer. \nRequirements:\n- Strong background in Python and API design.\n- Experience with FastAPI.\n- Hands-on experience with Azure AI tools and deploying models on Azure.\n- Understanding of LLM fine-tuning and LangChain."
+  },
+  {
+    "resume_text": "Sarah Innovator\n\nExperience: 4 years as an AI Engineer. Architected scalable microservices with FastAPI and Python. Deployed customized GPT-4 models using Azure OpenAI. Heavily utilized LangChain for RAG applications and successfully fine-tuned Llama-3 using LoRA on Azure ML.\n\nEducation: M.S. in Artificial Intelligence.\n\nSkills: Python, FastAPI, Azure AI, LangChain, LLM Fine-tuning, Docker.",
+    "job_description": "Proshore is looking for a Mid-Level AI Developer. \nRequirements:\n- Strong background in Python and API design.\n- Experience with FastAPI.\n- Hands-on experience with Azure AI tools and deploying models on Azure.\n- Understanding of LLM fine-tuning and LangChain."
+  },
+  {
+    "resume_text": "Mike Junior\n\nExperience: 6 months internship at WebSolutions. Wrote basic Python scripts for data cleaning. Familiar with HTML and CSS. I am a fast learner and really want to learn AI and Azure!\n\nEducation: Bootcamp Graduate.\n\nSkills: Python scripting, HTML, CSS, Teamwork.",
+    "job_description": "Proshore is looking for a Mid-Level AI Developer. \nRequirements:\n- Strong background in Python and API design.\n- Experience with FastAPI.\n- Hands-on experience with Azure AI tools and deploying models on Azure.\n- Understanding of LLM fine-tuning and LangChain."
+  },
+  {
+    "resume_text": "Dr. Emily Research\n\nExperience: 5 years Academic Researcher. Published 3 papers on parameter-efficient LLM fine-tuning and prompt engineering. Built experimental LangChain agents. Note: No production API or cloud deployment experience.\n\nEducation: Ph.D. in Computer Science.\n\nSkills: Python, PyTorch, LangChain, LoRA, Machine Learning.",
+    "job_description": "Proshore is looking for a Mid-Level AI Developer. \nRequirements:\n- Strong background in Python and API design.\n- Experience with FastAPI.\n- Hands-on experience with Azure AI tools and deploying models on Azure.\n- Understanding of LLM fine-tuning and LangChain."
+  },
+  {
+    "resume_text": "Chris Frontend\n\nExperience: 4 years building reactive web applications using React, Vue, and Tailwind CSS. Integrated REST APIs on the client side. \n\nEducation: B.S. in Web Design.\n\nSkills: JavaScript, React, CSS, HTML, Node.js.",
+    "job_description": "Proshore is looking for a Mid-Level AI Developer. \nRequirements:\n- Strong background in Python and API design.\n- Experience with FastAPI.\n- Hands-on experience with Azure AI tools and deploying models on Azure.\n- Understanding of LLM fine-tuning and LangChain."
+  },
+  {
+    "resume_text": "Priya Cloudmaster\n\nExperience: 5 years AWS Cloud Engineer. Built Python APIs with Django. Extensively used AWS Bedrock and AWS SageMaker for deploying LLMs. Used LlamaIndex for RAG.\n\nEducation: B.S. in Software Engineering.\n\nSkills: Python, Django, AWS Bedrock, LLMs, Terraform.",
+    "job_description": "Proshore is looking for a Mid-Level AI Developer. \nRequirements:\n- Strong background in Python and API design.\n- Experience with FastAPI.\n- Hands-on experience with Azure AI tools and deploying models on Azure.\n- Understanding of LLM fine-tuning and LangChain."
+  },
+  {
+    "resume_text": "David Buzzword\n\nExperience: 1 year as IT support. I watched YouTube videos on Python, FastAPI, Azure AI tools, LLM fine-tuning, and LangChain. I am an expert in all of these.\n\nEducation: High School Diploma.\n\nSkills: Python, FastAPI, Azure AI tools, LLM fine-tuning, LangChain.",
+    "job_description": "Proshore is looking for a Mid-Level AI Developer. \nRequirements:\n- Strong background in Python and API design.\n- Experience with FastAPI.\n- Hands-on experience with Azure AI tools and deploying models on Azure.\n- Understanding of LLM fine-tuning and LangChain."
+  },
+  {
+    "resume_text": "Elena Senior\n\nExperience: 10 years as Principal Architect. Led a team of 15 engineers. Designed enterprise-grade AI pipelines on Azure using LangGraph and FastAPI. Built custom foundation models from scratch.\n\nEducation: M.S. in Computer Science.\n\nSkills: Python, FastAPI, Azure AI, LangGraph, Distributed Systems, Team Leadership.",
+    "job_description": "Proshore is looking for a Mid-Level AI Developer. \nRequirements:\n- Strong background in Python and API design.\n- Experience with FastAPI.\n- Hands-on experience with Azure AI tools and deploying models on Azure.\n- Understanding of LLM fine-tuning and LangChain."
+  },
+  {
+    "resume_text": "Liam Data\n\nExperience: 3 years Data Analyst. Created complex SQL queries and built Tableau dashboards for executive reporting. Used Pandas for data manipulation.\n\nEducation: B.A. in Economics.\n\nSkills: SQL, Tableau, Pandas, Excel.",
+    "job_description": "Looking for a Mid-Level Data Analyst. \nRequirements:\n- Strong SQL skills.\n- Experience with data visualization tools like Tableau.\n- Python (Pandas) experience is a plus."
+  },
+  {
+    "resume_text": "Liam Data\n\nExperience: 3 years Data Analyst. Created complex SQL queries and built Tableau dashboards for executive reporting. Used Pandas for data manipulation.\n\nEducation: B.A. in Economics.\n\nSkills: SQL, Tableau, Pandas, Excel.",
+    "job_description": "Looking for a Senior DevOps Engineer. \nRequirements:\n- Expert in Kubernetes and Docker swarm.\n- Heavy experience with CI/CD pipelines (Jenkins/GitHub Actions).\n- Infrastructure as Code (Terraform/Ansible)."
+  }
+]
