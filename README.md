@@ -85,6 +85,7 @@ recruit-agent-api/
 ├── requirements.txt
 └── README.md                    # Project documentation
 ```
+</details>
 
 # 🚀 Quickstart Guide
 1. Prerequisites
