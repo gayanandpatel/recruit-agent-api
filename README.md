@@ -1,4 +1,4 @@
-# 🤖 RecruitAgent API: Agentic Candidate Screening Pipeline
+# 🕵️‍♂️ RecruitAgent API: Agentic Candidate Screening Pipeline
 
 ![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.109%2B-009688)
@@ -20,13 +20,13 @@ RecruitAgent is an Agentic AI screening API built with FastAPI and LangGraph, de
 
 ---
 
-## 📖 Overview
+## 📋 Overview
 
 Traditional single-prompt LLM chains suffer from hallucination, so this project implements an "Evaluator-Critic" loop using LangGraph to ensure higher reliability in candidate scoring. 
 
 Instead of relying on a single zero-shot evaluation, the system utilizes specialized AI agents to extract structured data, score the candidate objectively, and self-critique the results to eliminate bias before returning a deterministic JSON response to the client.
 
-## 🏗️ Architecture & Flow (The Agentic Graph)
+## ⛩️ Architecture & Flow (The Agentic Graph)
 
 This project utilizes a stateful graph architecture to manage the LLM reasoning process:
 
@@ -87,7 +87,7 @@ recruit-agent-api/
 ```
 </details>
 
-## 🚀 Quickstart Guide
+## 🕮 Quickstart Guide
 1. Prerequisites
 Ensure you have Python 3.11 or 3.12 installed on your machine.
 
