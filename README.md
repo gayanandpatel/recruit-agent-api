@@ -1,30 +1,34 @@
 # 🤖 RecruitAgent API: Agentic Candidate Screening Pipeline
 
-An asynchronous, multi-agent evaluation API built with **FastAPI** and **LangGraph**, designed to automate and standardize the resume screening process for the recruitment industry.
+[cite_start]RecruitAgent is an Agentic AI screening API built with FastAPI and LangGraph, designed to simulate an intelligent recruitment SaaS feature. [cite: 59] It automates the resume screening process by extracting data from raw documents (PDF, DOCX, TXT) and evaluating it against a job description using a self-correcting AI workflow.
 
 ---
 
 ## 📖 Overview
 
-Traditional LLM wrappers rely on zero-shot prompts, which are prone to hallucination and bias when evaluating candidates. RecruitAgent solves this by implementing an **Agentic Workflow** (Evaluator-Critic model). 
+[cite_start]Traditional single-prompt LLM chains suffer from hallucination, so this project implemented an "Evaluator-Critic" loop using LangGraph to ensure higher reliability in candidate scoring. [cite: 60] 
 
-The system utilizes specialized AI agents to extract structured data from resumes, score the candidate against a specific Job Description, and self-critique the results to ensure fairness and accuracy before returning a deterministic JSON response to the client.
+Instead of relying on a single zero-shot evaluation, the system utilizes specialized AI agents to extract structured data, score the candidate objectively, and self-critique the results to eliminate bias before returning a deterministic JSON response to the client.
 
-## 🏗️ Architecture & Flow
+## 🏗️ Architecture & Flow (The Agentic Graph)
 
 This project utilizes a stateful graph architecture to manage the LLM reasoning process:
 
-1. **Extraction Node:** Parses unstructured resume text into strict Pydantic data schemas.
-2. **Evaluation Node:** Compares candidate skills against the target Job Description, outputting a base score and identified skill gaps.
-3. **Critic Node (Self-Reflection):** Reviews the Evaluator's output for bias or missed context. If the critique fails, the graph loops back to the Evaluator for a revised score.
-4. **FastAPI Layer:** Handles asynchronous HTTP requests and serves the final structured output.
+1. [cite_start]**Extraction Node:** Takes a raw text resume and uses an LLM purely to extract structured data (Skills, Experience Years, Education) into a Pydantic model. [cite: 14]
+2. [cite_start]**Evaluation Node:** Takes the extracted structured data and the Job Description. [cite: 15] It outputs a base score and identifies skill gaps.
+3. [cite_start]**Critic Node (Self-Reflection):** Reviews the Evaluator's score. [cite: 17] [cite_start]If the Critic finds the score is biased or missed something in the context, it loops back to the Evaluator for a revision. [cite: 18]
+4. **FastAPI Layer:** Handles asynchronous `multipart/form-data` file uploads, parses the documents into text, and serves the final structured JSON output.
 
 ## 💻 Tech Stack
 
-* **Backend Framework:** Python 3.11+, FastAPI, Uvicorn
-* **AI Orchestration:** LangChain, LangGraph
-* **Data Validation:** Pydantic V2
-* **LLM Provider:** Azure OpenAI / OpenAI (Configurable)
+* [cite_start]**Language:** Python 3.11/3.12 [cite: 7]
+* [cite_start]**Web Framework:** FastAPI (essential for modern Python backends). [cite: 8]
+* [cite_start]**AI Orchestration:** LangGraph (Microsoft/industry standard for building stateful, multi-actor LLM applications). [cite: 9]
+* [cite_start]**Data Validation:** Pydantic V2 (Enforcing strict JSON schemas for the AI outputs). [cite: 10]
+* [cite_start]**LLM Provider:** Azure OpenAI. [cite: 11]
+* **Document Parsing:** `pypdf`, `python-docx`
+
+---
 
 ## 📂 Project Structure
 
@@ -48,18 +52,18 @@ recruit-agent-api/
 │   └── core/
 │       ├── __init__.py
 │       ├── config.py            # Pydantic BaseSettings for env vars
+│       ├── parsers.py           # Document extraction logic (PDF, DOCX, TXT)
 │       └── schemas.py           # Pydantic models for strict LLM outputs
 │
 ├── infrastructure/
-│   └── azure_ml_finetune.py     # Mock script demonstrating Azure ML knowledge
+│   └── azure_ml_finetune_job.py # Mock script demonstrating Azure ML knowledge
 │
 ├── data/
-│   ├── sample_resume_1.txt      # Dummy data for local testing
-│   ├── sample_resume_2.txt
+│   ├── sample_resume_1.pdf      # Sample files for local testing
+│   ├── sample_resume_2.docx
 │   └── job_description.txt      
 │
 ├── .env.example                 # Template for required API keys
 ├── .gitignore
 ├── requirements.txt
-└── README.md                    # Project documentation (You are here)
-```
+└── README.md                    # Project documentation
