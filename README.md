@@ -77,10 +77,11 @@ recruit-agent-api/
 |   |   |__sampleresume.pdf
 |   |__ job description/
 |   |   |__samplejd.pdf
-│   ├── resume.txt
-│   └── job_description.txt      
+│   ├── sample_resume.txt
+│   └── sample_job_description.txt      
 │
-├── .env.example                 # Template for required API keys
+├── .env                 # Template for required API keys
 ├── .gitignore
 ├── requirements.txt
 └── README.md                    # Project documentation
+```
