@@ -1,0 +1,18 @@
+JORDAN SMITH
+Data Scientist
+
+EXPERIENCE
+Junior Data Scientist | Insight Analytics | 2022 - Present (2 years)
+- Analyzed large datasets using Pandas and NumPy to find customer trends.
+- Built predictive models using Scikit-Learn and XGBoost.
+- Created data visualizations and dashboards using Streamlit and Plotly.
+- Experimented with standard OpenAI API calls for basic text summarization.
+- Managed data pipelines using pure Python scripts.
+
+EDUCATION
+M.S. in Data Science, New York University - 2022
+
+SKILLS
+Languages: Python, R, SQL
+Libraries: Pandas, Scikit-Learn, TensorFlow, Streamlit
+Tools: Jupyter, AWS S3, Git

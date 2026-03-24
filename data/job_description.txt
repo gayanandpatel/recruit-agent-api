@@ -1,0 +1,17 @@
+Job Title: Mid-Level Backend AI Engineer
+Location: Remote
+Experience Required: 3+ years
+
+About the Role:
+We are looking for a Mid-Level Backend Engineer to help us build out our AI-driven features. You will be responsible for building robust APIs and orchestrating LLM workflows.
+
+Required Skills:
+- Proficiency in Python 3.10+
+- Experience building RESTful APIs using FastAPI
+- Knowledge of Pydantic for data validation
+- Experience with LLM orchestration frameworks (LangChain, LangGraph, or Semantic Kernel)
+- Familiarity with cloud platforms, specifically Microsoft Azure (Azure OpenAI, Azure ML)
+- Strong understanding of state management and asynchronous programming
+
+Nice to Have:
+- Experience fine-tuning LLMs (LoRA, QLoRA)

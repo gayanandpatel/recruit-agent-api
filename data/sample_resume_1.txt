@@ -1,0 +1,17 @@
+ALEX CHEN
+Software Engineer
+
+EXPERIENCE
+Backend Developer | TechFlow Solutions | 2021 - Present (3 years)
+- Designed and maintained asynchronous REST APIs using FastAPI and Python 3.11.
+- Implemented strict data validation using Pydantic V2 across all endpoints.
+- Built an internal customer support chatbot utilizing Azure OpenAI and LangGraph for multi-agent state management.
+- Deployed and scaled applications on Azure App Service.
+
+EDUCATION
+B.S. in Computer Science, University of Washington - 2020
+
+SKILLS
+Languages: Python, JavaScript, SQL
+Frameworks: FastAPI, LangChain, LangGraph, React
+Cloud/Tools: Azure, Docker, Git, Azure ML
