@@ -85,3 +85,20 @@ recruit-agent-api/
 ├── requirements.txt
 └── README.md                    # Project documentation
 ```
+# 🚀 Quickstart Guide
+1. Prerequisites
+Ensure you have Python 3.11 or 3.12 installed on your machine.
+
+2. Installation
+Clone the repository and install the required dependencies:
+``bash
+git clone <your-repo-url>
+cd recruit-agent-api
+
+# Create and activate a virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
