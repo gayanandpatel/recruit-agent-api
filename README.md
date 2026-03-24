@@ -1,4 +1,4 @@
-v# 🤖 RecruitAgent API: Agentic Candidate Screening Pipeline
+# 🤖 RecruitAgent API: Agentic Candidate Screening Pipeline
 
 ![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.109%2B-009688)
