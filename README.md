@@ -108,7 +108,7 @@ pip install -r requirements.txt
 
 This project is configured to use Azure OpenAI's API. Create a .env file in the root directory:
 ```bash
-cp .env.example .env
+cp .env
 ```
 
 Populate .env with your Azure credentials:
@@ -117,4 +117,17 @@ Populate .env with your Azure credentials:
     AZURE_OPENAI_ENDPOINT=[https://your-resource-name.openai.azure.com/](https://your-resource-name.openai.azure.com/)
     AZURE_OPENAI_API_VERSION=2024-08-01-preview
     AZURE_OPENAI_DEPLOYMENT_NAME=your_model_deployment_name
+```
+4. Running the Application
+
+Launch the asynchronous FastAPI server:
+```bash
+uvicorn app.main:app --reload
+```
+The API will be available at http://127.0.0.1:8000.
+
+## 📚 API Documentation
+Once the server is running, access the interactive Swagger UI to test file uploads at:
+```text
+http://127.0.0.1:8000/docs
 ```
