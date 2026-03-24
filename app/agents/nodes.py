@@ -5,8 +5,6 @@ from app.core.config import settings
 from app.core.schemas import ExtractedCandidateData, EvaluatorOutput, CriticOutput
 from app.agents.state import AgentState
 
-# Wrapper class to show structural maturity, as requested by the roadmap
-
 
 # This was for openai key
 # class AzureLLMClient:
