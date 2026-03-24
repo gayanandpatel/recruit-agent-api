@@ -104,3 +104,15 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 # Install dependencies
 pip install -r requirements.txt
 ```
+3. Environment Configuration
+This project is configured to use Azure OpenAI's API. Create a .env file in the root directory:
+```bash
+cp .env.example .env
+```
+    Populate .env with your Azure credentials:
+    ```bash
+    AZURE_OPENAI_API_KEY=your_azure_api_key_here
+    AZURE_OPENAI_ENDPOINT=[https://your-resource-name.openai.azure.com/](https://your-resource-name.openai.azure.com/)
+    AZURE_OPENAI_API_VERSION=2024-08-01-preview
+    AZURE_OPENAI_DEPLOYMENT_NAME=your_model_deployment_name
+    ```
