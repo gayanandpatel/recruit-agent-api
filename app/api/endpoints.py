@@ -7,7 +7,7 @@ router = APIRouter()
 
 @router.post("/evaluate", response_model=FinalEvaluationResponse)
 async def evaluate_candidate(
-    # Both inputs are now strict file uploads
+    # Using UploadFile allows us to handle file uploads easily in FastAPI. We also add descriptions for better API documentation.
     resume: UploadFile = File(..., description="Upload the candidate's resume (PDF, DOCX, TXT)"),
     job_description: UploadFile = File(..., description="Upload the job description (PDF, DOCX, TXT)")
 ):
@@ -16,7 +16,7 @@ async def evaluate_candidate(
         resume_bytes = await resume.read()
         jd_bytes = await job_description.read()
         
-        # 2. Extract text from both files using our parser utility
+        # 2. Extract text from both files using parser utility
         resume_text = extract_text_from_file(resume_bytes, resume.filename)
         jd_text = extract_text_from_file(jd_bytes, job_description.filename)
         
@@ -30,7 +30,7 @@ async def evaluate_candidate(
         # 4. Run the multi-agent workflow
         final_state = agent_executor.invoke(initial_state)
         
-        # 5. Map the state back to our final API response schema
+        # 5. Map the state back to final API response schema
         return FinalEvaluationResponse(
             candidate_data=final_state["extracted_data"],
             final_score=final_state["evaluation"].score,
@@ -39,7 +39,7 @@ async def evaluate_candidate(
         )
         
     except ValueError as ve:
-        # Catch our specific parsing errors (e.g., wrong file type uploaded)
+        # Catch specific parsing errors (e.g., wrong file type uploaded)
         raise HTTPException(status_code=400, detail=str(ve))
     except Exception as e:
         # Catch LLM or internal server errors
