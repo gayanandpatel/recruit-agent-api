@@ -45,7 +45,8 @@ def evaluate_match(state: AgentState) -> dict:
     chain = prompt | llm_client.with_structured_output(EvaluatorOutput)
     
     # Pass critic feedback if it exists from a previous loop
-    feedback = state.get("critic_review", {}).get("feedback", "No previous feedback.") if state.get("critic_review") else "No previous feedback."
+    critic_review = state.get("critic_review")
+    feedback = critic_review.feedback if critic_review else "No previous feedback."
     
     result = chain.invoke({
         "job_description": state["job_description"],
