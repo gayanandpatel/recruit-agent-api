@@ -71,12 +71,13 @@ recruit-agent-api/
 │       ├── parsers.py           # Document extraction logic (PDF, DOCX, TXT)
 │       └── schemas.py           # Pydantic models for strict LLM outputs
 │
-├── infrastructure/
-│   └── azure_ml_finetune_job.py # Mock script demonstrating Azure ML knowledge
 │
 ├── data/
-│   ├── sample_resume_1.pdf      # Sample files for local testing
-│   ├── sample_resume_2.docx
+│   ├── resume/                  # Sample files for local testing
+|   |   |__sampleresume.pdf
+|   |__ job description/
+|   |   |__samplejd.pdf
+│   ├── resume.txt
 │   └── job_description.txt      
 │
 ├── .env.example                 # Template for required API keys
