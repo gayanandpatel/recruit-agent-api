@@ -1,4 +1,4 @@
-from fastapi import APIRouter, HTTPException, UploadFile, File, Form
+from fastapi import APIRouter, HTTPException, UploadFile, File
 from app.core.schemas import FinalEvaluationResponse
 from app.agents.graph import agent_executor
 from app.core.parsers import extract_text_from_file
@@ -7,21 +7,23 @@ router = APIRouter()
 
 @router.post("/evaluate", response_model=FinalEvaluationResponse)
 async def evaluate_candidate(
-    # Change input to accept an uploaded file and a form text field
+    # Both inputs are now strict file uploads
     resume: UploadFile = File(..., description="Upload the candidate's resume (PDF, DOCX, TXT)"),
-    job_description: str = Form(..., description="Paste the job description text here")
+    job_description: UploadFile = File(..., description="Upload the job description (PDF, DOCX, TXT)")
 ):
     try:
-        # 1. Read the uploaded file into memory
-        file_bytes = await resume.read()
+        # 1. Read both uploaded files into memory asynchronously
+        resume_bytes = await resume.read()
+        jd_bytes = await job_description.read()
         
-        # 2. Extract text based on the file extension
-        resume_text = extract_text_from_file(file_bytes, resume.filename)
+        # 2. Extract text from both files using our parser utility
+        resume_text = extract_text_from_file(resume_bytes, resume.filename)
+        jd_text = extract_text_from_file(jd_bytes, job_description.filename)
         
-        # 3. Initialize the LangGraph state
+        # 3. Initialize the LangGraph state with the extracted text
         initial_state = {
             "resume_text": resume_text,
-            "job_description": job_description,
+            "job_description": jd_text,
             "revision_count": 0
         }
         
@@ -37,7 +39,7 @@ async def evaluate_candidate(
         )
         
     except ValueError as ve:
-        # Catch our specific parsing errors (e.g., wrong file type)
+        # Catch our specific parsing errors (e.g., wrong file type uploaded)
         raise HTTPException(status_code=400, detail=str(ve))
     except Exception as e:
         # Catch LLM or internal server errors
