@@ -93,7 +93,7 @@ Ensure you have Python 3.11 or 3.12 installed on your machine.
 2. Installation
 Clone the repository and install the required dependencies:
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/gayanandpatel/recruit-agent-api
 cd recruit-agent-api
 
 # Create and activate a virtual environment
